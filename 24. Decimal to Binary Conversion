@@ -1,0 +1,12 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a decimal number: ");
+        int decimalValue = Convert.ToInt32(Console.ReadLine());
+        string binaryValue = Convert.ToString(decimalValue, 2);
+        Console.WriteLine($"Binary value of {decimalValue} is {binaryValue}");
+    }
+}
