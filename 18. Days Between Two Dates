@@ -1,0 +1,16 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter first date (yyyy-MM-dd): ");
+        DateTime date1 = DateTime.Parse(Console.ReadLine());
+
+        Console.Write("Enter second date (yyyy-MM-dd): ");
+        DateTime date2 = DateTime.Parse(Console.ReadLine());
+
+        TimeSpan difference = date2 - date1;
+        Console.WriteLine($"Days between the two dates: {difference.Days} days.");
+    }
+}
