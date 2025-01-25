@@ -1,0 +1,65 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter number of rows and columns for Matrix A: ");
+        int rowsA = Convert.ToInt32(Console.ReadLine());
+        int colsA = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number of rows and columns for Matrix B: ");
+        int rowsB = Convert.ToInt32(Console.ReadLine());
+        int colsB = Convert.ToInt32(Console.ReadLine());
+
+        if (colsA != rowsB)
+        {
+            Console.WriteLine("Matrix multiplication not possible.");
+            return;
+        }
+
+        int[,] matrixA = new int[rowsA, colsA];
+        int[,] matrixB = new int[rowsB, colsB];
+        int[,] result = new int[rowsA, colsB];
+
+        Console.WriteLine("Enter elements of Matrix A:");
+        for (int i = 0; i < rowsA; i++)
+        {
+            for (int j = 0; j < colsA; j++)
+            {
+                matrixA[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine("Enter elements of Matrix B:");
+        for (int i = 0; i < rowsB; i++)
+        {
+            for (int j = 0; j < colsB; j++)
+            {
+                matrixB[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        for (int i = 0; i < rowsA; i++)
+        {
+            for (int j = 0; j < colsB; j++)
+            {
+                result[i, j] = 0;
+                for (int k = 0; k < colsA; k++)
+                {
+                    result[i, j] += matrixA[i, k] * matrixB[k, j];
+                }
+            }
+        }
+
+        Console.WriteLine("Resultant Matrix:");
+        for (int i = 0; i < rowsA; i++)
+        {
+            for (int j = 0; j < colsB; j++)
+            {
+                Console.Write(result[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
