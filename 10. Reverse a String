@@ -1,0 +1,13 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string str = Console.ReadLine();
+        string reversed = string.Join("", str.Reverse());
+
+        Console.WriteLine("Reversed string: " + reversed);
+    }
+}
