@@ -1,0 +1,21 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter first string: ");
+        string str1 = Console.ReadLine();
+        
+        Console.Write("Enter second string: ");
+        string str2 = Console.ReadLine();
+
+        char[] arr1 = str1.Replace(" ", "").ToLower().ToCharArray();
+        char[] arr2 = str2.Replace(" ", "").ToLower().ToCharArray();
+
+        Array.Sort(arr1);
+        Array.Sort(arr2);
+
+        Console.WriteLine(new string(arr1) == new string(arr2) ? "Anagram" : "Not an Anagram");
+    }
+}
