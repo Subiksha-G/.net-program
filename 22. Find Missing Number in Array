@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the array size (n-1): ");
+        int n = Convert.ToInt32(Console.ReadLine()) + 1;
+
+        int[] arr = new int[n - 1];
+        Console.WriteLine("Enter the elements of the array:");
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        int totalSum = n * (n + 1) / 2;
+        int arrSum = 0;
+
+        foreach (var num in arr)
+        {
+            arrSum += num;
+        }
+
+        int missingNumber = totalSum - arrSum;
+        Console.WriteLine($"The missing number is: {missingNumber}");
+    }
+}
